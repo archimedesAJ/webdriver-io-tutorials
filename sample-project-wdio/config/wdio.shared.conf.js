@@ -7,7 +7,7 @@ export const config = {
     // ====================
     // WebdriverIO supports running e2e tests as well as unit and component tests.
     runner: 'local',
-    port: 4723,
+   
     //
     // ==================
     // Specify Test Files
@@ -23,11 +23,7 @@ export const config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
-    specs: [
-        // ToDo: define location for spec files here
-        // './test/specs/**/*.spec.js' //run all tests
-        './test/specs/android/add-note-copy*.js'
-    ],
+    
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -53,16 +49,7 @@ export const config = {
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
-    //
-    capabilities: [{
-        'appium:platformName': 'Android',
-        'appium:platformVersion': '16.0',
-        'appium:deviceName': 'Pixel 8 Pro',
-        'appium:automationName': 'UIAutomator2',
-        'appium:app': path.join(process.cwd(),'app/android/ColorNote+Notepad.apk'),
-        'appium:autoGrantPermissions': true
-    }],
-
+   
     //
     // ===================
     // Test Configurations
