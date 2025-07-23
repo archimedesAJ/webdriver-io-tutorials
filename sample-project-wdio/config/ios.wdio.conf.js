@@ -1,4 +1,4 @@
-import config from './wdio.shared.conf.js';
+import { config } from './wdio.shared.conf.js';
 import path from 'path';
 
 
@@ -11,7 +11,7 @@ config.port = 4723;
 // Specs
 // ============
 config.specs =[
-    './test/specs/ios/ios-native*.js'
+    '../test/specs/ios/ios-native.spec.js'
 ];
 
 // ============
@@ -19,14 +19,19 @@ config.specs =[
 // ============
 config.capabilities = [
     {
-        'appium:platformName': 'ios',
+        platformName: 'ios',
         'appium:platformVersion': '18.5',
         'appium:deviceName': 'iPhone 16',
         'appium:automationName': 'XCUITest',
         'appium:app': path.join(process.cwd(),'app/ios/UIKitCatalog.app'),
         'appium:autoGrantPermissions': true
     }
-]
+];
 
+config.service = ['appium', {
+        command: 'appium'
+    }
+];
 
-exports.config = config;
+// Use ES module export instead of CommonJS
+export { config };
