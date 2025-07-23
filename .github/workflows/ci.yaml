@@ -21,6 +21,7 @@ jobs:
             BROWSERSTACK_USER: ${{ secrets.BS_USER }}
             BROWSERSTACK_KEY: ${{ secrets.BS_KEY }} 
           run: npx wdio config/android.bs.wdio.conf.js --spec test/specs/android/hooks-scenario.spec.js
+          working-directory: ./sample-project-wdio
 
         - name: 📦 Upload Logs
           uses: actions/upload-artifact@v4
