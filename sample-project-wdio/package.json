@@ -16,6 +16,7 @@
     "wdio": "wdio run ./wdio.conf.js"
   },
   "dependencies": {
+    "chromedriver": "^133.0.0",
     "dotenv": "^17.2.0"
   }
 }

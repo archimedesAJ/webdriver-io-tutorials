@@ -11,7 +11,7 @@ config.port = 4723;
 // Specs
 // ============
 config.specs =[
-    '../test/specs/android/hooks-scenario.spec.js'
+    '../test/specs/android/webview.spec.js'
 ];
 
 // ============
@@ -24,14 +24,22 @@ config.capabilities = [
         'appium:deviceName': 'Pixel 8 Pro',
         'appium:automationName': 'UiAutomator2',
         'appium:app': path.join(process.cwd(),'app/android/ColorNote+Notepad.apk'),
-        'appium:autoGrantPermissions': true
+        'appium:autoGrantPermissions': true,
+        'appium:chromedriverAutodownload': true
     }
 ];
 
-config.service = ['appium', {
-        command: 'appium'
+config.services = [['appium', {
+        command: 'appium',
+        // args: {
+        //     address: 'localhost',
+        //     port: 4723,
+        //     relaxedSecurity: true
+        // },
+        // logPath: './'
+        
     }
-];
+]];
 
 
 // Use ES module export instead of CommonJS

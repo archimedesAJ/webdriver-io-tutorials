@@ -28,7 +28,7 @@ config.capabilities = [
     }
 ];
 
-config.service = ['appium', {
+config.services = ['appium', {
         command: 'appium'
     }
 ];
